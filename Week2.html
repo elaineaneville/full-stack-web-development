@@ -20,18 +20,18 @@
     </nav>
 
     <main>
-      <section>
+      <section class="employees">
         <h2>Outdoors Plants</h2>
         <p>This is a section for outdoor plants.</p>
-        <img src="alocasia.png" height="50px" width="50px">
+        <img src="alocasia.png" height="50px" width="50px" id="employee1">
 
         <h2>Indoor Plants</h2>
         <p>This is a section for indoor plants.</p>
-        <img src="alocasia.png" height="50px" width="50px">
+        <img src="alocasia.png" height="50px" width="50px" id="employee2">
 
         <h2>Both Plants</h2>
         <p>This is a section for both plants.</p>
-        <img src="alocasia.png" height="50px" width="50px">
+        <img src="alocasia.png" height="50px" width="50px" id="employee3">
       </section>
 
       <article>
@@ -53,7 +53,7 @@
           </tr>
           <tr>
             <td>Email:</td>
-            <td><input type="email" id="lname" placeholder="Smith" /></td>
+            <td><input type="email" id="email" placeholder="stacysmith@gmail.com" /></td>
           </tr>
         </table>
 
@@ -65,6 +65,20 @@
           <option>Senior</option>
         </select>
         <br />
+
+        <h3>Classroom Assignment</h3>
+        <input type="radio" id="C102" name="classroom" value="C102"> 
+        <label>C102</label>
+        <input type="radio" id="C210" name="classroom" value="C210"> 
+        <label>C210</label>
+        <input type="radio" id="C229" name="classroom" value="C229"> 
+        <label>C229</label>
+
+        <h3>Upload Transcript</h3>
+        <input type="file" id="transcript" name="transcript">
+        
+        <br/>
+
         <button type="reset">Clear</button>
         <button type="submit">Submit</button>
       </form>
