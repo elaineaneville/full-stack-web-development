@@ -126,6 +126,11 @@ td {
     background-color: #f4f4f4;
 }
 
+#topBtn {
+    display: flex;
+    justify-content: right;
+}
+
 footer {
     background-color: #222;
     color: white;
