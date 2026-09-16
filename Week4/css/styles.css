@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.plant-card {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.plant-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media(max-width: 768px){
+    .plant-container {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+    }
+}
