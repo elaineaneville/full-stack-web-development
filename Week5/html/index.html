@@ -16,6 +16,34 @@
     </header>
 
     <main>
+        <!--Part 2 Wednesday Code-->
+        <section class="controls">
+            <label for="search">Search Movies:</label>
+            <input type="text" id="search" placeholder="Enter a movie title...">
+
+            <label for="genre-filter">Filter by Genre:</label>
+            <select id="genre-filter">
+                <option value="all">All Genres</option>
+                <option value="Action">Action</option>
+                <option value="Animation">Animation</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Science Fiction">Science Ficition</option>
+                <option value="Adventure">Adventure</option>
+            </select>
+
+            <label for="year-filter">Filter by Year:</label>
+            <select id="year-filter">
+                <option value="all">All Years</option>
+                <option value="1990">Before 2000</option>
+                <option vlaue="2000">2000 and Later</option>
+            </select>
+
+            <button id="reset-button">Reset Filters</button>
+        </section>
+
+        <p id="movie-count"></p>
+        <!--Part 1 Monday-->
         <section id="movie-container"></section>
     </main>
 </body>
