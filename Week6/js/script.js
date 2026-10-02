@@ -40,6 +40,12 @@ const movies = [
         genre: "Animation",
         year: 2003,
         rating: 8.1
+    },
+    {
+        title: "Test Movie",
+        genre: "Animation",
+        year: 2000,
+        rating: 5.4
     }
 ];
 
@@ -73,3 +79,63 @@ function sortAlphabetically() {
     });
     displayMovies(sortedMovies);
 }
+
+//filter()
+function filterByGenre(){
+    const genreInput = prompt("Enter a genre to filter by (e.g., Action, Drama, Animation):");
+    if(!genreInput) {
+        alert("No genre entered. Please try again.");
+        return;
+    }
+    const filteredMovies = movies.filter(movie => movie.genre.toLowerCase() === genreInput.toLowerCase());
+
+    displayMovies(filteredMovies);
+}
+
+//filter by year
+function filterByYear() {
+    const yearInput = prompt("Enter a year to filter by (e.g., 1994):");
+    if(!yearInput) {
+        alert("No year entered. Please try again.");
+        return;
+    }
+    const filteredMovies = movies.filter(movie => movie.year === parseInt(yearInput));
+
+    displayMovies(filteredMovies);
+}
+
+//filter by rating
+function filterByRating() {
+    const filteredRatedMovies = movies.filter(movie => movie.rating >= 8);
+    displayMovies(filteredRatedMovies);
+}
+
+//find specific movie
+function findMovie() {
+    const titleInput = prompt("Enter the title of the movie to find:");
+
+    const movieFound = movies.find(movie => movie.title.toLowerCase() === titleInput.toLowerCase());
+    if (movieFound) {
+        displayMovies([movieFound]);
+    } else {
+        alert("Movie not found.");
+    }
+}
+
+//movie stats
+function showMovieStats() {
+    const totalRating = movies.reduce((total, movie) => {
+         return total + movie.rating;
+        }, 0);
+    const averageRating = (totalRating / movies.length).toFixed(2);
+    
+    const stats = document.getElementById("stats");
+
+    stats.innerHTML = `
+        <h2>Movie Statistics</h2>
+        <p>Total Movies: ${movies.length}</p>
+        <p>Average Rating: ${averageRating}</p>
+    `;
+}
+
+showAllMovies(); // Display all movies on page load
