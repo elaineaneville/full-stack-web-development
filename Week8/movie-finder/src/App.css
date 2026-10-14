@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f3f4f6;
+  background-color: #9fd120;
   color: #222;
 }
 
@@ -22,4 +22,35 @@ select {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px #00000015;
+}
+
+.movie-card h2 {
+  color: #ca7e3b;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #550971;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cf3ced;
 }
