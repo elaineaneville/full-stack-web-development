@@ -39,7 +39,7 @@ function App() {
 
       {error && <p style={{color: "red"}}>{error}</p>}
 
-      /* Display the dog image if available */
+      {/* Display the dog image if available */}
       {dogImage && !loading && (
         <div>
           <h2>Look at this dog!</h2>
