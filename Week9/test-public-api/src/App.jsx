@@ -1,4 +1,5 @@
 import {useState} from "react";
+import "./App.css";
 
 function App() {
   // variable
@@ -31,25 +32,27 @@ function App() {
   }
 
   return (
-    <div style={{textAlign: "center", padding: "30px"}}>
-      <h1>Random Dog App</h1>
-      <button onClick={getDog}>Get a Dog!</button>
+    <div className="app">
+      <div className="dog-card">
+        <h1>Random Dog App</h1>
+        <button onClick={getDog}>Get a Dog!</button>
 
-      {loading && <p>Loading dog image...</p>}
+        {loading && <p className="loading">Loading dog image...</p>}
 
-      {error && <p style={{color: "red"}}>{error}</p>}
+        {error && <p className="error">{error}</p>}
 
-      {/* Display the dog image if available */}
-      {dogImage && !loading && (
-        <div>
-          <h2>Look at this dog!</h2>
-          <img 
-          src={dogImage}
-          alt="Random Dog" 
-          style={{maxWidth: "400px", marginTop: "20px"}} 
-          />
-        </div>
-      )}
+        {/* Display the dog image if available */}
+        {dogImage && !loading && (
+          <div>
+            <h2>Look at this dog!</h2>
+            <img 
+            src={dogImage}
+            alt="Random Dog" 
+            className="dog-image"
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
