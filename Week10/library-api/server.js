@@ -5,6 +5,7 @@ const port = 3000;
 
 //parse the JSON request bodies
 app.use(express.json());
+app.use(express.static('public'));
 
 //in memory array for books
 let books = [
@@ -52,6 +53,29 @@ function validateBook(body) {
     if(typeof genre !== 'string' || !genre.trim()) return "genre is requied";
     return null;
 }
+
+app.get('/', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title>Library API</title>
+                <link rel="stylesheet" type="text/css" href="/css/style.css">
+            </head>
+            <body>
+                <h1>Welcome to the Library API</h1>
+                <p>Use the following endpoints to interact with the API:</p>
+                <ul>
+                    <li>GET /books - Get all books</li>
+                    <li>GET /books/:id - Get a book by ID</li>
+                    <li>POST /books - Create a new book</li>
+                    <li>PUT /books/:id - Update a book by ID</li>
+                    <li>DELETE /books/:id - Delete a book by ID</li>
+                </ul>
+            </body>
+        </html>
+    `);
+});
 
 //routes 
 //GET /books - get all books
@@ -102,6 +126,15 @@ app.put('/books/:id', (req, res) => {
 
 //delete
 //DELETE /books/:id - delete a book by id
+app.delete("/books/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const index = books.findIndex((b) => b.id === id);
+    if(index === -1) {
+        return res.status(404).json({ error: "Book not found" });
+    }
+    const [removedBook] = books.splice(index, 1);
+    res.status(200).json({message: "Book deleted", book: removedBook});
+});
 
 //start our server
 app.listen(port, () => {
