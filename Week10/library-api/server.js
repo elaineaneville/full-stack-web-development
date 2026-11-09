@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 //in memory array for books
 let books = [
-    {   id: 1, title: "The Hobbit", 
+    {   id: 1, title: "The Hobadfit", 
         author: "J.R.R. Tolkien", year: 1937,
         genre: "Fantasy", available: true
     },
