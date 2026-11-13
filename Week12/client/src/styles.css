@@ -1,0 +1,73 @@
+:root {
+    font-family: 'sans-serif';
+    color: #202938;
+    background: #f3f5f8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 52px 0 32px;
+}
+
+.hero h1 {
+    margin: 7px 0 10px; 
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+}
+
+.hero > p:last-child {
+    color: #657184;
+    font-size: 1.05rem;
+}
+
+.hero-text {
+    color: #58718f;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 0.13em;
+}
+
+.panel{
+    background: white;
+    border: 1px solid #e2e7ee;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px #1c2b3a0a;
+    padding: 26px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+}
+
+.creature-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px; 
+}
+
+label {
+    display: grid;
+    gap: 7px;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
