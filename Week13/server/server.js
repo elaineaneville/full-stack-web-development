@@ -4,6 +4,8 @@ import Cors from "cors";
 import dotenv from "dotenv";
 import creatureRoutes from "./routes/creatures.js";
 
+const authRoutes = require("./routes/authRoutes");
+
 dotenv.config();
 
 const app = express();
@@ -24,7 +26,7 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api/creatures", creatureRoutes);
 
-
+app.use("/api/auth", authRoutes);
 app.use((req, res) => {
     res.status(404).json({ message: "Route not found" });
 });
