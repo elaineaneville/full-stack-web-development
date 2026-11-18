@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Login from "./components/Login";
+import Register from "./components/register";
 
 const emptyForm = {
   name: "",
@@ -138,6 +140,7 @@ function App() {
 
   return (
     <main className="container">
+      <Login />
         <header className="hero">
             <p className="hero-text">Creature Management</p>
             <h1>Creature Catalog</h1>
